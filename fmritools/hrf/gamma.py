@@ -30,7 +30,7 @@ def gamma_mode_pdf(x, mode, sd):
     shape, rate = _to_shape_rate(mode, sd)
 
     ## Compute and return PDF.
-    return rate ** shape / fgamma(shape) * x ** (shape - 1) * np.exp(-rate * x)    
+    return rate ** shape / fgamma(shape) * x ** (shape - 1) * np.exp(-rate * x)
 
 def spm_hrf(TR, t1=6, t2=16, d1=1, d2=1, ratio=6, onset=0, kernel=32):
     """Python implementation of spm_hrf.m from the SPM software.
@@ -118,7 +118,7 @@ def single_gamma_hrf(TR, t=5.4, d=5.2, onset=0, kernel=32):
     ## Define times.
     dt = TR/fMRI_T
     u  = np.arange(kernel/dt + 1) - onset/dt
-    u /= fMRI_T
+    u *= dt
 
     ## Generate (super-sampled) HRF.
     hrf = (u / t) ** ((t ** 2) / (d ** 2) * 8.0 * np.log(2.0)) \

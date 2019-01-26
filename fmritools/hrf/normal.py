@@ -3,7 +3,7 @@ from scipy.stats import norm
 
 def double_gaussian_hrf(TR, t1=5, t2=15, d1=2, d2=4, ratio=6, onset=0, kernel=32):
     """Double normal hemodynamic response function.
-    
+
     Parameters
     ----------
     TR : float
@@ -27,7 +27,7 @@ def double_gaussian_hrf(TR, t1=5, t2=15, d1=2, d2=4, ratio=6, onset=0, kernel=32
     -------
     hrf : array
         Hemodynamic repsonse function
-    
+
     References
     ----------
     [1] Adapted from the pymvpa tools.
@@ -37,19 +37,19 @@ def double_gaussian_hrf(TR, t1=5, t2=15, d1=2, d2=4, ratio=6, onset=0, kernel=32
     ## Define metadata.
     fMRI_T = 16.0
     TR = float(TR)
-    
+
     ## Define times.
     dt = TR/fMRI_T
     u  = np.arange(kernel/dt + 1) - onset/dt
-    u /= fMRI_T
+    u *= dt
     
     ## Generate (super-sampled) HRF.
     hrf = norm.pdf(u, t1, d1) - norm.pdf(u, t2, d2) / ratio
-    
+
     ## Downsample.
     good_pts=np.array(range(np.int(kernel/TR)))*fMRI_T
     hrf=hrf[good_pts.astype(int)]
-    
+
     ## Normalize and return.
     hrf = hrf/np.sum(hrf)
     return hrf
