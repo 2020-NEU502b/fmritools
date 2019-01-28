@@ -7,7 +7,7 @@ Useful functions for fMRI experimental design and analysis.
 To install fmritools from the *master* branch, open a terminal and run:
 
 ```
-pip install git+https://github.com/2019-NEU502b/fmritools
+pip install git+https://github.com/2019-NEU502b/fmritools.git
 ```
 
 If you instead want to install from a different branch, run:
