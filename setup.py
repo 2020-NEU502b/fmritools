@@ -10,6 +10,7 @@ path = os.path.abspath(os.path.dirname(__file__))
 ## Metadata
 DISTNAME = 'fmritools'
 MAINTAINER = 'PNI'
+MAINTAINER_EMAIL = 'PrincetonNeuro@princeton.edu'
 DESCRIPTION = 'Useful tools for fMRI experiment design and analysis'
 URL = 'http://pni.princeton.edu'
 LICENSE = 'MIT'
@@ -34,6 +35,7 @@ if VERSION is None:
 
 setup(name=DISTNAME,
       maintainer=MAINTAINER,
+      maintainer_email=MAINTAINER_EMAIL,
       description=DESCRIPTION,
       url=URL,
       version=VERSION,
