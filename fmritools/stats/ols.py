@@ -15,8 +15,6 @@ class OLS(object):
         Nuisance regressors.
     intercept : True | False
         If true, include intercept term in nuisance regressors.
-    significance : True | False
-        if true, compute p-values of T-statistics.
         
     Attributes
     ----------
