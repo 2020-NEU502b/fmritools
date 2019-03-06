@@ -15,7 +15,7 @@ URL = 'http://pni.princeton.edu'
 LICENSE = 'MIT'
 DOWNLOAD_URL = 'https://github.com/2019-NEU502b'
 
-with open(os.path.join(path, 'README.rst'), encoding='utf-8') as readme_file:
+with open(os.path.join(path, 'README.md'), encoding='utf-8') as readme_file:
     README = readme_file.read()
 
 with open(os.path.join(path, 'requirements.txt')) as requirements_file:
