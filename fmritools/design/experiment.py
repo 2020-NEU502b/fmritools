@@ -1,8 +1,6 @@
 import numpy as np
-from numba import jit
 from ..hrf import spm_hrf
 
-@jit
 def _convolve(a, v, mode='full'):
     return np.convolve(a, v, mode)
 
