@@ -1,6 +1,6 @@
 """Useful tools for fMRI analysis"""
 
-__version__ = '0.1'
+__version__ = '0.2'
 
 from . import hrf
 from . import design
